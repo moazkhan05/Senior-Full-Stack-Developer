@@ -1,33 +1,30 @@
-import { useState } from 'react'
+import { useState , useEffect} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import moment from 'moment'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentTime, setCurrentTime] = useState(moment.format('h:mm:ss'))
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+{/* 
+  1. create a hollow circle
+  2. reduce .5 px from the circle radius and  create a 
+  
+  3.  center point + radius * angle of deviation ; 6 degree for seconds and minutes & 30 degree for hours
+  4.  3 hand clock with different width sizes, denoting them with secs, mins, hours
+  5. handling current and previous states for each clock handle
+  6. updating time every second, and comparing the values ; if sec is eqaul to 0, min will also updated, and when minutes values changes to 0 hours will be updated
+  7. when min and sec will be 59 , next value will again start from 0 , similarly when hours hit 12 , 1
+   
+*/}
+
+    {/* every sec , run setTimeout , this will update my second clock hand 60*/}
+    {/* I need to check the last min I have , once it updated, I have to change minute clock hand 60 */}
+    {/* I need to check the last hour  I have , once it updated, I have to change hour clock hand 12 */} 
     </>
   )
 }
